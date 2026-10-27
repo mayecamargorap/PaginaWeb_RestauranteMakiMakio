@@ -628,7 +628,7 @@ h2 span {
 
   /* Foto del dueño: 63 % en celular */
   .about-photo {
-    width: 63%;
+    width: 70%;
     min-height: 0;
     max-height: none;
     justify-self: center;
@@ -695,4 +695,28 @@ h2 span {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
+}
+
+/* CELULAR: tarjetas del menú una debajo de la otra */
+@media screen and (max-width: 560px) {
+    .dish-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        gap: 20px;
+    }
+
+    .dish-grid > .dish-card {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box;
+    }
+
+    .dish-grid > .dish-card.solo-computador {
+        display: none !important;
+    }
 }
