@@ -862,3 +862,16 @@ h2 span {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* En computador se muestran todas las tarjetas */
+.solo-computador {
+  display: block;
+}
+
+/* En celulares se ocultan las tarjetas adicionales */
+@media (max-width: 700px) {
+  .solo-computador {
+    display: none;
+  }
+}
