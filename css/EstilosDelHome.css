@@ -1,4 +1,3 @@
-
 /* =========================================================
    ESTILOS GENERALES
    ========================================================= */
@@ -37,7 +36,8 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -85,6 +85,10 @@ h2 {
 h2 span {
   color: var(--color-primary);
 }
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
 
 .button {
   display: inline-flex;
@@ -286,7 +290,7 @@ h2 span {
 
 /* =========================================================
    SECCIÓN MENÚ
-   Computador: tres columnas
+   Computador: tres tarjetas horizontales
    ========================================================= */
 
 .menu-section {
@@ -377,29 +381,41 @@ h2 span {
 
 /* =========================================================
    SECCIÓN QUIÉNES SOMOS
-   Computador: tres valores en horizontal
+   Computador: tres valores en una fila
+   Foto: 75 % del ancho disponible
    ========================================================= */
 
 .about-section {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(40px, 7vw, 100px);
+  gap: clamp(30px, 5vw, 70px);
   background: var(--color-white);
 }
 
+/* Contenedor de la foto reducido al 75 % */
 .about-photo {
-  min-height: 450px;
+  width: 75%;
+  min-width: 0;
+  min-height: 0;
+  justify-self: center;
   overflow: hidden;
   background: var(--color-cream);
 }
 
+/* La imagen conserva sus proporciones */
 .about-photo img {
+  display: block;
   width: 100%;
-  height: 100%;
-  min-height: 450px;
-  object-fit: cover;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
   object-position: center;
+}
+
+.about-copy {
+  min-width: 0;
 }
 
 .about-copy > p:not(.eyebrow) {
@@ -407,14 +423,18 @@ h2 span {
   font-size: 0.96rem;
 }
 
-.values {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Tres valores en horizontal en computador */
+.about-copy .values {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: start;
   gap: 16px;
+  width: 100%;
   margin: 32px 0;
 }
 
 .value-card {
+  display: block;
   min-width: 0;
   padding-top: 17px;
   border-top: 2px solid var(--color-primary);
@@ -611,8 +631,6 @@ h2 span {
 
 /* =========================================================
    VISIBILIDAD DE TARJETAS
-   En computador se muestran todas.
-   En celular se ocultan las adicionales.
    ========================================================= */
 
 .solo-computador {
@@ -636,24 +654,32 @@ h2 span {
 
   .about-section,
   .contact-section {
-    gap: 38px;
+    gap: 30px;
   }
 
-  .about-photo,
-  .about-photo img {
-    min-height: 380px;
+  .about-photo {
+    width: 75%;
   }
 
-  .values {
-    gap: 12px;
+  .about-copy .values {
+    gap: 10px;
   }
 
   .value-card h3 {
-    font-size: 0.86rem;
+    font-size: 0.82rem;
   }
 
   .value-card p {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+  }
+
+  .dish-grid {
+    gap: 18px;
+  }
+
+  .dish-caption {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
@@ -747,7 +773,7 @@ h2 span {
     max-height: 38svh;
   }
 
-  /* Menú: solo dos tarjetas en horizontal */
+  /* Menú: dos tarjetas en horizontal */
 
   .dish-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -782,17 +808,26 @@ h2 span {
     gap: 35px;
   }
 
-  .about-photo,
+  /* Foto al 75 % y centrada en celular */
+  .about-photo {
+    width: 75%;
+    min-height: 0;
+    justify-self: center;
+  }
+
   .about-photo img {
-    min-height: 320px;
-    max-height: 480px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
   }
 
   /* Valores: dos tarjetas en horizontal */
-
-  .values {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .about-copy .values {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px;
+    margin: 28px 0;
   }
 
   .values > .solo-computador {
@@ -897,7 +932,7 @@ h2 span {
     font-size: 0.72rem;
   }
 
-  .values {
+  .about-copy .values {
     gap: 8px;
   }
 
