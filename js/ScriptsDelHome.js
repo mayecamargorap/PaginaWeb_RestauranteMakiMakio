@@ -1,33 +1,75 @@
-// Navegación móvil y año automático del pie de página.
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector("#main-nav");
-  const navLinks = nav ? nav.querySelectorAll("a") : [];
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+/* =========================================================
+   MENÚ DE NAVEGACIÓN PARA CELULARES
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const Va_botonMenu = document.querySelector(".menu-toggle");
+  const Va_menuNavegacion = document.querySelector(".main-nav");
+
+  // Verificar que existan los elementos del menú.
+  if (Va_botonMenu && Va_menuNavegacion) {
+
+    // Abrir o cerrar el menú al pulsar el botón.
+    Va_botonMenu.addEventListener("click", () => {
+      const Va_menuAbierto =
+        Va_botonMenu.getAttribute("aria-expanded") === "true";
+
+      Va_botonMenu.setAttribute(
+        "aria-expanded",
+        String(!Va_menuAbierto)
+      );
+
+      Va_botonMenu.setAttribute(
+        "aria-label",
+        Va_menuAbierto ? "Abrir menú" : "Cerrar menú"
+      );
+
+      Va_menuNavegacion.classList.toggle(
+        "is-open",
+        !Va_menuAbierto
+      );
     });
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menú");
+    // Cerrar el menú al seleccionar una sección.
+    const Va_enlacesMenu =
+      Va_menuNavegacion.querySelectorAll("a");
+
+    Va_enlacesMenu.forEach((Va_enlace) => {
+      Va_enlace.addEventListener("click", () => {
+        Va_menuNavegacion.classList.remove("is-open");
+        Va_botonMenu.setAttribute("aria-expanded", "false");
+        Va_botonMenu.setAttribute("aria-label", "Abrir menú");
       });
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menú");
+    // Cerrar el menú con la tecla Escape.
+    document.addEventListener("keydown", (Va_evento) => {
+      if (Va_evento.key === "Escape") {
+        Va_menuNavegacion.classList.remove("is-open");
+        Va_botonMenu.setAttribute("aria-expanded", "false");
+        Va_botonMenu.setAttribute("aria-label", "Abrir menú");
+      }
+    });
+
+    // Cerrar el menú si se amplía la pantalla a escritorio.
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 700) {
+        Va_menuNavegacion.classList.remove("is-open");
+        Va_botonMenu.setAttribute("aria-expanded", "false");
+        Va_botonMenu.setAttribute("aria-label", "Abrir menú");
       }
     });
   }
 
-  const year = document.querySelector("#current-year");
-  if (year) year.textContent = new Date().getFullYear();
+  /* =======================================================
+     AÑO AUTOMÁTICO DEL PIE DE PÁGINA
+     ======================================================= */
+
+  const Va_elementoAnio = document.getElementById("current-year");
+
+  if (Va_elementoAnio) {
+    Va_elementoAnio.textContent = new Date().getFullYear();
+  }
 });
+

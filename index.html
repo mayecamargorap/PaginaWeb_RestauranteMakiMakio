@@ -1,132 +1,470 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#EA5639">
-  <meta name="description" content="Maki Makio Sushi & Wok: cocina fusión colombo-japonesa en Facatativá.">
-  <title>Maki Makio Sushi &amp; Wok | Facatativá</title>
+
+  <meta
+    name="description"
+    content="Descubre Maki Makio Sushi & Wok en Facatativá. Una experiencia gastronómica de fusión colombo-japonesa."
+  >
+
+  <meta name="theme-color" content="#FFFFFF">
+
+  <title>Maki Makio Sushi & Wok | Facatativá</title>
+
+  <!-- Tipografía principal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="css/EstilosDelHome.css">
-  <script src="js/ScriptsDelHome.js" defer></script>
 </head>
+
 <body>
+
+  <!-- =====================================================
+       ENCABEZADO Y NAVEGACIÓN
+       ===================================================== -->
+
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Maki Makio, inicio">
-      <img src="imagenes/Logo.png" alt="Logo de Maki Makio Sushi & Wok" class="brand-logo">
-      <span class="brand-name">Maki Makio</span>
+
+    <!-- Logo de la marca -->
+    <a class="brand" href="#home" aria-label="Maki Makio, ir al inicio">
+      <img
+        class="brand-logo"
+        src="imagenes/Logo.png"
+        alt="Logo de Maki Makio"
+      >
     </a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
+
+    <!-- Botón para abrir el menú en dispositivos móviles -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú de navegación"
+      aria-controls="main-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
+    <!-- Navegación principal -->
     <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#esencia">Nuestra esencia</a>
+      <a href="#home">Home</a>
       <a href="#menu">Menú</a>
-      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#nosotros">Quiénes somos</a>
       <a href="#contacto">Contacto</a>
     </nav>
+
   </header>
 
+
+  <!-- =====================================================
+       HOME: VIDEO DE FONDO Y LOGO CENTRADO
+       ===================================================== -->
+
   <main>
-    <section class="hero" id="inicio">
+
+    <section class="hero" id="home" aria-label="Inicio">
+
+      <!-- Video de fondo -->
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source
+          src="videos/lv_0_20250313223117_EDITADO_V001.mp4"
+          type="video/mp4"
+        >
+        Tu navegador no admite la reproducción de video.
+      </video>
+
+      <!-- Capa oscura para mejorar la visibilidad del logo -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Texto HOME y logo centrados -->
       <div class="hero-content">
-        <p class="eyebrow">SUSHI · WOK · FUSIÓN</p>
-        <h1>Sabores que unen<br><span>dos culturas.</span></h1>
-        <p class="hero-copy">Técnicas japonesas, sabor colombiano y el toque local que hace cada bocado especial.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://menu.pirpos.com/menu/6425afd994cffd05ec790117" target="_blank" rel="noopener noreferrer">Ver menú <span aria-hidden="true">↗</span></a>
-          <a class="button button-outline" href="#contacto">Contáctanos</a>
-        </div>
-        <p class="hero-location"><span aria-hidden="true">⌖</span> Facatativá, Colombia</p>
+        <p class="eyebrow">HOME</p>
+
+        <img
+          class="hero-logo"
+          src="imagenes/Logo.png"
+          alt="Maki Makio Sushi & Wok"
+        >
       </div>
-      <div class="hero-art">
-        <img src="imagenes/Imagen1.jpg" alt="Plato destacado de Maki Makio">
-        <div class="hero-stamp">Fusión<br><strong>colombo</strong><br>japonesa</div>
-      </div>
+
     </section>
 
-    <section class="essence section-pad" id="esencia">
-      <div class="section-heading">
-        <p class="eyebrow">NUESTRA ESENCIA</p>
-        <h2>Una fusión con <span>identidad propia.</span></h2>
-      </div>
-      <div class="essence-grid">
-        <div class="essence-copy">
-          <p>Creamos experiencias de cocina fusión colombo-japonesa con ingredientes frescos y locales, combinando técnicas japonesas con sabores colombianos para ofrecer platos innovadores, calidad y una atención cercana.</p>
-          <a class="text-link" href="#menu">Descubre nuestro menú <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="values">
-          <article class="value-card"><span class="value-number">01</span><h3>Frescura</h3><p>Ingredientes seleccionados y preparaciones cuidadas.</p></article>
-          <article class="value-card"><span class="value-number">02</span><h3>Innovación</h3><p>Sabores que conectan la cocina japonesa con la colombiana.</p></article>
-          <article class="value-card"><span class="value-number">03</span><h3>Compromiso local</h3><p>Una propuesta que valora los ingredientes de nuestra región.</p></article>
-        </div>
-      </div>
-    </section>
+
+    <!-- =====================================================
+         SECCIÓN MENÚ
+         Solo tres categorías principales
+         ===================================================== -->
 
     <section class="menu-section section-pad" id="menu">
+
+      <!-- Encabezado de la sección -->
       <div class="section-heading section-heading-center">
-        <p class="eyebrow">ALGO DELICIOSO TE ESPERA</p>
-        <h2>¿Qué se te <span>antoja hoy?</span></h2>
-        <p>Explora nuestras opciones y encuentra tu próximo favorito.</p>
+        <p class="eyebrow">MENÚ</p>
+
+        <h2>
+          Descubre nuestros
+          <span>sabores</span>
+        </h2>
+
+        <p>
+          Una fusión de sabores que reúne lo mejor de la cocina
+          japonesa y nuestra cultura.
+        </p>
       </div>
+
+      <!-- Tarjetas de categorías -->
       <div class="dish-grid">
+
+        <!-- Tarjeta 1: Sushi -->
         <article class="dish-card">
-          <div class="dish-image"><img src="imagenes/Imagen1.jpg" alt="Sushi de Maki Makio" loading="lazy"></div>
-          <div class="dish-caption"><h3>Sushi</h3><p>Bocados llenos de sabor y creatividad.</p></div>
+
+          <div class="dish-image">
+            <img
+              src="imagenes/Imagen1.jpg"
+              alt="Selección de sushi de Maki Makio"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="dish-caption">
+            <h3>Sushi</h3>
+
+            <p>
+              Descubre nuestras preparaciones y disfruta
+              cada bocado.
+            </p>
+          </div>
+
         </article>
+
+
+        <!-- Tarjeta 2: Nuestros sabores -->
         <article class="dish-card">
-          <div class="dish-image"><img src="imagenes/Imagen2.jpg" alt="Plato de Maki Makio" loading="lazy"></div>
-          <div class="dish-caption"><h3>Nuestros sabores</h3><p>Una combinación para descubrir y disfrutar.</p></div>
+
+          <div class="dish-image">
+            <img
+              src="imagenes/Imagen2.jpg"
+              alt="Preparaciones del menu de Maki Makio"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="dish-caption">
+            <h3>Nuestros sabores</h3>
+
+            <p>
+              Una combinación de ingredientes, colores y
+              sabores para disfrutar.
+            </p>
+          </div>
+
         </article>
+
+
+        <!-- Tarjeta 3: Fusión para compartir -->
         <article class="dish-card">
-          <div class="dish-image"><img src="imagenes/Imagen3.jpg" alt="Preparación de Maki Makio" loading="lazy"></div>
-          <div class="dish-caption"><h3>Fusión para compartir</h3><p>Opciones para diferentes antojos y momentos.</p></div>
+
+          <div class="dish-image">
+            <img
+              src="imagenes/Imagen3.jpg"
+              alt="Preparaciones para compartir"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="dish-caption">
+            <h3>Fusión para compartir</h3>
+
+            <p>
+              Comparte una experiencia diferente alrededor
+              de la mesa.
+            </p>
+          </div>
+
         </article>
+
       </div>
-      <div class="menu-cta"><a class="button button-dark" href="https://menu.pirpos.com/menu/6425afd994cffd05ec790117" target="_blank" rel="noopener noreferrer">Ver menú completo <span aria-hidden="true">↗</span></a><p>Los pedidos se realizan en nuestro menú digital.</p></div>
+
+      <!-- Acceso al menu digital -->
+      <div class="menu-cta">
+
+        <a
+          class="button button-primary"
+          href="https://menu.pirpos.com/menu/6425afd994cffd05ec790117"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver menú
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p>
+          Consulta nuestro menú completo y conoce nuestras preparaciones.
+        </p>
+
+      </div>
+
     </section>
 
-    <section class="about-section section-pad" id="quienes-somos">
-      <div class="about-photo"><img src="imagenes/Dueno.jpg" alt="Dueno de Maki Makio Sushi & Wok" loading="lazy"></div>
-      <div class="about-copy">
-        <p class="eyebrow">QUIÉNES SOMOS</p>
-        <h2>Una idea que creció con <span>pasión.</span></h2>
-        <p>Maki Makio nació del deseo de ofrecer en Facatativá una experiencia gastronómica diferente. Desde nuestros primeros pasos, hemos combinado técnicas japonesas con ingredientes y sabores cercanos a nuestra cultura, creciendo con cada pedido y con el apoyo de nuestra comunidad.</p>
-        <p>Seguimos trabajando para ofrecer productos frescos, propuestas innovadoras y una atención cercana en cada experiencia.</p>
-        <a class="button button-primary" href="https://menu.pirpos.com/menu/6425afd994cffd05ec790117" target="_blank" rel="noopener noreferrer">Conoce nuestro menú ↗</a>
+
+    <!-- =====================================================
+         SECCIÓN QUIÉNES SOMOS
+         ===================================================== -->
+
+    <section class="about-section section-pad" id="nosotros">
+
+      <!-- Fotografía del propietario -->
+      <div class="about-photo">
+
+        <img
+          src="imagenes/dueno.jpg"
+          alt="Propietario de Maki Makio Sushi & Wok"
+          loading="lazy"
+        >
+
       </div>
+
+      <!-- Historia y propuesta de la marca -->
+      <div class="about-copy">
+
+        <p class="eyebrow">QUIÉNES SOMOS</p>
+
+        <h2>
+          Una fusión con
+          <span>identidad propia</span>
+        </h2>
+
+        <!-- Texto de presentación -->
+        <p>
+          Maki Makio nació del deseo de ofrecer en Facatativá una
+          experiencia gastronómica diferente: la fusión colombo-japonesa.
+          Desde nuestros primeros pasos, hemos combinado técnicas japonesas
+          con ingredientes y sabores cercanos a nuestra cultura, ofreciendo:
+        </p>
+
+        <!-- Valores de la marca -->
+        <div class="values">
+
+          <!-- Valor 1 -->
+          <article class="value-card">
+
+            <span class="value-number">01</span>
+
+            <h3>Calidad</h3>
+
+            <p>
+              Cuidado en nuestras preparaciones y atención a cada detalle.
+            </p>
+
+          </article>
+
+          <!-- Valor 2 -->
+          <article class="value-card">
+
+            <span class="value-number">02</span>
+
+            <h3>Frescura</h3>
+
+            <p>
+              Ingredientes y sabores que hacen especial cada experiencia.
+            </p>
+
+          </article>
+
+          <!-- Valor 3 -->
+          <article class="value-card">
+
+            <span class="value-number">03</span>
+
+            <h3>Cercanía</h3>
+
+            <p>
+              Un espacio para disfrutar, compartir y sentirte bienvenido.
+            </p>
+
+          </article>
+
+        </div>
+
+        <!-- Botón para consultar el menu -->
+        <a
+          class="button button-dark about-button"
+          href="https://menu.pirpos.com/menu/6425afd994cffd05ec790117"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Conoce nuestro menú
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
     </section>
+
+
+    <!-- =====================================================
+         SECCIÓN CONTACTO
+         Orden: título, dirección, WhatsApp y redes sociales
+         ===================================================== -->
 
     <section class="contact-section section-pad" id="contacto">
+
+      <!-- Información de contacto -->
       <div class="contact-copy">
-        <p class="eyebrow">HABLEMOS</p>
-        <h2>Estamos a un <span>mensaje</span> de distancia.</h2>
-        <p>¿Tienes antojo o alguna pregunta? Escríbenos y conoce más de Maki Makio.</p>
+
+        <p class="eyebrow">CONTACTO</p>
+
+        <h2>
+          Estamos a un
+          <span>mensaje</span>
+          de distancia.
+        </h2>
+
+        <!-- Dirección del restaurante -->
         <div class="address-block">
+
           <span class="contact-icon" aria-hidden="true">⌖</span>
-          <div><strong>Encuéntranos</strong><p>Cra. 13 # 12B–03<br>Facatativá, Cundinamarca</p></div>
+
+          <div>
+            <strong>Encuéntranos</strong>
+
+            <p>
+              Cra. 13 # 12B–03<br>
+              Facatativá, Cundinamarca
+            </p>
+          </div>
+
         </div>
-        <a class="button button-primary button-full" href="https://wa.me/573118956027" target="_blank" rel="noopener noreferrer">WhatsApp · 311 895 6027 <span aria-hidden="true">↗</span></a>
+
+        <!-- Botón principal de WhatsApp -->
+        <a
+          class="button button-primary button-full whatsapp-button"
+          href="https://wa.me/573118956027"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp · 311 895 6027
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <!-- Botones secundarios de redes sociales -->
         <div class="social-links" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/makimakiosushiwok" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a href="https://www.instagram.com/makimakiosushiwok" target="_blank" rel="noopener noreferrer">Threads ↗</a>
-          <a href="https://www.facebook.com/MakiMakioSushi/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+
+          <a
+            class="social-button"
+            href="https://www.instagram.com/makimakiosushiwok"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram ↗
+          </a>
+
+          <a
+            class="social-button"
+            href="https://www.facebook.com/MakiMakioSushi/?ref=PROFILE_EDIT_xav_ig_profile_page_web#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook ↗
+          </a>
+
+          <a
+            class="social-button"
+            href="https://www.threads.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Threads ↗
+          </a>
+
         </div>
+
       </div>
+
+
+      <!-- Mapa de ubicación -->
       <div class="map-wrap">
-        <iframe title="Mapa de ubicación de Maki Makio en Facatativá" src="https://www.google.com/maps?q=Cra.%2013%20%23%2012B-03%2C%20Facatativ%C3%A1%2C%20Cundinamarca&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cra.%2013%20%23%2012B-03%2C%20Facatativ%C3%A1%2C%20Cundinamarca" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
+
+        <iframe
+          title="Ubicación de Maki Makio en Facatativá"
+          src="https://maps.google.com/maps?q=Cra.%2013%20%23%2012B-03%2C%20Facatativ%C3%A1%2C%20Cundinamarca&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+
+        <!-- Enlace para abrir la ubicación en Google Maps -->
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Cra.+13+%23+12B-03%2C+Facatativ%C3%A1%2C+Cundinamarca"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cómo llegar ↗
+        </a>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =====================================================
+       PIE DE PÁGINA
+       ===================================================== -->
+
   <footer class="site-footer">
-    <a class="footer-brand" href="#inicio">Maki Makio</a>
-    <p>Sushi &amp; Wok · Cocina fusión colombo-japonesa</p>
-    <p>© <span id="current-year"></span> Maki Makio. Todos los derechos reservados.</p>
+
+    <a class="footer-brand" href="#home" aria-label="Volver al inicio">
+
+      <img
+        src="imagenes/Logo.png"
+        alt="Maki Makio"
+        loading="lazy"
+      >
+
+    </a>
+
+    <p>
+      Maki Makio Sushi & Wok · Facatativá, Cundinamarca
+    </p>
+
+    <p>
+      © <span id="current-year">2026</span> Maki Makio.
+      Todos los derechos reservados.
+    </p>
+
   </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Menú móvil y funcionalidades generales
+       ===================================================== -->
+
+  <script src="js/ScriptsDelHome.js"></script>
+
 </body>
 </html>
