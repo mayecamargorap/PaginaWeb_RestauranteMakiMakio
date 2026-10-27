@@ -97,7 +97,10 @@ h2 span {
   border-radius: 3px;
   font-size: 0.88rem;
   font-weight: 700;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .button:hover {
@@ -145,8 +148,8 @@ h2 span {
 
 .brand {
   display: flex;
-  align-items: center;
   flex-shrink: 0;
+  align-items: center;
 }
 
 .brand-logo {
@@ -209,26 +212,21 @@ h2 span {
   width: 24px;
   height: 2px;
   background: var(--color-black);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 /* =========================================================
-   HOME: VIDEO DE FONDO, TEXTO Y LOGO CENTRADO
-   ========================================================= */
-
-   
-/* =========================================================
-   HOME: VIDEO RESPONSIVE Y LOGO CENTRADO
+   HOME: VIDEO DE FONDO Y LOGO
    ========================================================= */
 
 .hero {
   position: relative;
-  isolation: isolate;
   display: flex;
   width: 100%;
   height: clamp(420px, 75vh, 760px);
   height: clamp(420px, 75svh, 760px);
-  min-height: 0;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -237,9 +235,8 @@ h2 span {
 
 .hero-video {
   position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
+  z-index: 0;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -250,7 +247,7 @@ h2 span {
 
 .hero-overlay {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   inset: 0;
   background: rgba(0, 0, 0, 0.18);
   pointer-events: none;
@@ -258,7 +255,7 @@ h2 span {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   width: 100%;
   max-width: 100%;
@@ -287,9 +284,9 @@ h2 span {
   filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.22));
 }
 
-
 /* =========================================================
    SECCIÓN MENÚ
+   Computador: tres columnas
    ========================================================= */
 
 .menu-section {
@@ -324,7 +321,9 @@ h2 span {
   overflow: hidden;
   background: var(--color-white);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.045);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .dish-card:hover {
@@ -378,6 +377,7 @@ h2 span {
 
 /* =========================================================
    SECCIÓN QUIÉNES SOMOS
+   Computador: tres valores en horizontal
    ========================================================= */
 
 .about-section {
@@ -409,12 +409,13 @@ h2 span {
 
 .values {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   margin: 32px 0;
 }
 
 .value-card {
+  min-width: 0;
   padding-top: 17px;
   border-top: 2px solid var(--color-primary);
 }
@@ -444,7 +445,6 @@ h2 span {
 
 /* =========================================================
    SECCIÓN CONTACTO
-   Orden: título, dirección, WhatsApp y redes sociales
    ========================================================= */
 
 .contact-section {
@@ -460,7 +460,8 @@ h2 span {
   font-size: 0.96rem;
 }
 
-/* Dirección del restaurante */
+/* Dirección */
+
 .address-block {
   display: flex;
   align-items: flex-start;
@@ -493,13 +494,15 @@ h2 span {
   font-size: 0.88rem;
 }
 
-/* Botón principal de WhatsApp */
+/* WhatsApp */
+
 .whatsapp-button {
   width: 100%;
   margin-top: 20px;
 }
 
-/* Tres botones blancos alineados en una sola fila */
+/* Redes sociales */
+
 .social-links {
   display: grid;
   width: 100%;
@@ -523,7 +526,9 @@ h2 span {
   font-weight: 700;
   text-align: center;
   white-space: nowrap;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .social-button:hover {
@@ -531,7 +536,8 @@ h2 span {
   color: var(--color-white);
 }
 
-/* Mapa de ubicación */
+/* Mapa */
+
 .map-wrap {
   position: relative;
   min-height: 400px;
@@ -559,9 +565,8 @@ h2 span {
   font-weight: 700;
 }
 
-
 /* =========================================================
-   PIE DE PÁGINA RESPONSIVE
+   PIE DE PÁGINA
    ========================================================= */
 
 .site-footer {
@@ -604,45 +609,22 @@ h2 span {
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 700px) {
-  .site-footer {
-    padding: 32px 6%;
-  }
+/* =========================================================
+   VISIBILIDAD DE TARJETAS
+   En computador se muestran todas.
+   En celular se ocultan las adicionales.
+   ========================================================= */
 
-  .footer-brand img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .site-footer p {
-    font-size: 0.75rem;
-  }
-  
-  .hero {
-    width: 100%;
-    height: 70vh;
-    height: 70svh;
-    min-height: 360px;
-    max-height: 650px;
-  }
-
-  .hero-content {
-    padding: 20px 6%;
-  }
-
-  .hero-logo {
-    width: min(340px, 78vw);
-    max-height: 38svh;
-  }
-
+.solo-computador {
+  display: block;
 }
-
 
 /* =========================================================
    ADAPTACIÓN PARA TABLETAS
    ========================================================= */
 
 @media (max-width: 1000px) {
+
   .section-pad {
     padding: 80px 5%;
   }
@@ -662,15 +644,17 @@ h2 span {
     min-height: 380px;
   }
 
-.values {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
+  .values {
+    gap: 12px;
+  }
 
-.value-card {
-  min-width: 0;
-  padding: 16px 12px;
-}
+  .value-card h3 {
+    font-size: 0.86rem;
+  }
+
+  .value-card p {
+    font-size: 0.74rem;
+  }
 }
 
 /* =========================================================
@@ -678,9 +662,12 @@ h2 span {
    ========================================================= */
 
 @media (max-width: 700px) {
+
   :root {
     --header-height: 70px;
   }
+
+  /* Encabezado */
 
   .site-header {
     height: var(--header-height);
@@ -736,32 +723,62 @@ h2 span {
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  /* Espaciado general */
+
   .section-pad {
     padding: 65px 6%;
   }
 
+  /* Video de inicio */
+
   .hero {
-    min-height: 75vh;
-    min-height: 75svh;
+    height: 70vh;
+    height: 70svh;
+    min-height: 360px;
+    max-height: 650px;
+  }
+
+  .hero-content {
+    padding: 20px 6%;
   }
 
   .hero-logo {
-    width: min(400px, 85vw);
+    width: min(340px, 78vw);
+    max-height: 38svh;
   }
 
-  /* Las tarjetas del menú se apilan en móviles */
+  /* Menú: solo dos tarjetas en horizontal */
+
   .dish-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .dish-grid > .solo-computador {
+    display: none !important;
   }
 
   .dish-image {
-    height: 260px;
+    height: 150px;
   }
+
+  .dish-caption {
+    padding: 14px 12px 16px;
+  }
+
+  .dish-caption h3 {
+    font-size: 0.95rem;
+  }
+
+  .dish-caption p {
+    font-size: 0.78rem;
+  }
+
+  /* Quiénes somos */
 
   .about-section,
   .contact-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 35px;
   }
 
@@ -771,25 +788,40 @@ h2 span {
     max-height: 480px;
   }
 
-  .values {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
+  /* Valores: dos tarjetas en horizontal */
 
-.value-card {
-  min-width: 0;
-  padding: 16px 12px;
-}
+  .values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .values > .solo-computador {
+    display: none !important;
+  }
 
   .value-card {
-    padding-top: 14px;
+    min-width: 0;
+    padding: 14px 10px;
   }
+
+  .value-card h3 {
+    font-size: 0.88rem;
+  }
+
+  .value-card p {
+    font-size: 0.74rem;
+  }
+
+  .about-button {
+    max-width: 100%;
+  }
+
+  /* Contacto */
 
   .whatsapp-button {
     width: 100%;
   }
 
-  /* Redes sociales siempre en una sola fila */
   .social-links {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
@@ -809,6 +841,21 @@ h2 span {
   .map-wrap iframe {
     min-height: 330px;
   }
+
+  /* Pie de página */
+
+  .site-footer {
+    padding: 32px 6%;
+  }
+
+  .footer-brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-footer p {
+    font-size: 0.75rem;
+  }
 }
 
 /* =========================================================
@@ -816,6 +863,7 @@ h2 span {
    ========================================================= */
 
 @media (max-width: 380px) {
+
   .hero-logo {
     width: 88vw;
   }
@@ -829,11 +877,45 @@ h2 span {
     font-size: 0.82rem;
   }
 
-  .dish-image {
-    height: 220px;
+  .dish-grid {
+    gap: 8px;
   }
 
-  /* Conserva los tres botones en una sola fila */
+  .dish-image {
+    height: 125px;
+  }
+
+  .dish-caption {
+    padding: 12px 9px 14px;
+  }
+
+  .dish-caption h3 {
+    font-size: 0.86rem;
+  }
+
+  .dish-caption p {
+    font-size: 0.72rem;
+  }
+
+  .values {
+    gap: 8px;
+  }
+
+  .value-card {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .value-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .value-card p {
+    font-size: 0.7rem;
+  }
+
+  /* Conserva los tres botones sociales en una fila */
+
   .social-links {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
@@ -850,6 +932,7 @@ h2 span {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -860,18 +943,5 @@ h2 span {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-
-/* En computador se muestran todas las tarjetas */
-.solo-computador {
-  display: block;
-}
-
-/* En celulares se ocultan las tarjetas adicionales */
-@media (max-width: 700px) {
-  .solo-computador {
-    display: none;
   }
 }
